@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Calculadora Basica LogicDif.</string>
+    <string name="uso">Ingresa primero el numero y luego el operador.</string>
+    <string name="valor">Numero</string>
+    <string name="suma">+</string>
+    <string name="resta">-</string>
+    <string name="multi">x</string>
+    <string name="divo">/</string>
+
+    <string name="contsuma">Boton para sumar.</string>
+    <string name="contresta">Boton para resta.</string>
+    <string name="contmulti">Boton para multiplicar.</string>
+    <string name="contdivi">Boton para dividir.</string>
+    <string name="cerrar">X</string>
+</resources>

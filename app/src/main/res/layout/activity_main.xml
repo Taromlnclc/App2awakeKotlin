@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:id="@+id/titulo"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/ingreso"
+        app:layout_constraintHeight_percent="0.15"
+        android:background="@color/fondo"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        >
+
+        <!-- Informacion Layout y boton de cierre -->
+        <!-- Info -->
+        <TextView
+            android:id="@+id/uso"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.85"
+            android:text="@string/uso"
+            android:textSize="25sp"
+            android:padding="8sp"
+            android:textColor="@color/colorInfo"
+            android:textStyle="bold"
+            android:layout_gravity="start"/>
+
+        <!-- Boton de cerrar -->
+        <Button
+            android:id="@+id/cerrar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.15"
+            android:text="@string/cerrar"
+            android:textColor="@color/colorRojo"
+            android:textStyle="bold"
+            android:textSize="40sp"
+            android:onClick="botonCerrar"
+            android:layout_gravity="end"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ingreso"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:background="@drawable/operaciones"
+        app:layout_constraintTop_toBottomOf="@id/titulo"
+        app:layout_constraintBottom_toTopOf="@id/operacion"
+        app:layout_constraintHeight_percent="0.15"
+        >
+
+        <!-- Ingreso de valores -->
+
+        <EditText
+            android:id="@+id/valor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="5sp"
+            android:layout_marginTop="20sp"
+            android:layout_marginEnd="5sp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/valor"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:minHeight="48dp"
+            android:text=""
+            android:textColor="#60E6E6"
+            android:textColorHint="#757575"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <!-- Bandera -->
+        <TextView
+            android:id="@+id/bandera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:text="" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/operacion"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/ingreso"
+        app:layout_constraintBottom_toTopOf="@id/resLayout"
+        app:layout_constraintHeight_percent="0.5"
+        android:background="@color/colorVerde">
+
+    <!-- la cuadricula de operaciones -->
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:columnCount="2"
+            android:rowCount="2"
+            android:background="@drawable/operaciones">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:orientation="vertical"
+                android:background="@color/fondo"
+                android:gravity="center">
+
+
+                <ImageView
+                    android:id="@+id/suma"
+                    android:layout_width="100sp"
+                    android:layout_height="100sp"
+                    android:gravity="center"
+                    android:background="@drawable/operaciones"
+                    android:padding="5sp"
+                    android:onClick="botonSuma"
+                    android:scaleType="fitCenter"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/contsuma"
+                    app:srcCompat="@drawable/suma"
+                    />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:orientation="vertical"
+                android:background="@color/fondo"
+                android:gravity="center">
+
+
+                <ImageView
+                    android:id="@+id/resta"
+                    android:layout_width="100sp"
+                    android:layout_height="100sp"
+                    android:gravity="center"
+                    android:background="@drawable/operaciones"
+                    android:padding="5sp"
+                    android:onClick="botonResta"
+                    android:scaleType="fitCenter"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/contresta"
+                    app:srcCompat="@drawable/resta"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:orientation="vertical"
+                android:background="@color/fondo"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/multi"
+                    android:layout_width="100sp"
+                    android:layout_height="100sp"
+                    android:gravity="center"
+                    android:background="@drawable/operaciones"
+                    android:padding="5sp"
+                    android:onClick="botonMulti"
+                    android:scaleType="fitCenter"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/contmulti"
+                    app:srcCompat="@drawable/x"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:orientation="vertical"
+                android:background="@color/fondo"
+                android:gravity="center">
+
+
+                <ImageView
+                    android:id="@+id/divide"
+                    android:layout_width="100sp"
+                    android:layout_height="100sp"
+                    android:gravity="center"
+                    android:background="@drawable/operaciones"
+                    android:padding="5sp"
+                    android:onClick="botonDivi"
+                    android:scaleType="fitCenter"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/contdivi"
+                    app:srcCompat="@drawable/div"/>
+
+            </LinearLayout>
+
+        </GridLayout>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/resLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/operacion"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_percent="0.2"
+        android:background="@color/teal_700">
+
+        <!-- Los resultados -->
+        <TextView
+            android:id="@+id/resultado"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text=""
+            android:textSize="70sp"
+            android:textColor="#2196F3"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@drawable/operaciones"
+            android:padding="5sp"
+            />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
