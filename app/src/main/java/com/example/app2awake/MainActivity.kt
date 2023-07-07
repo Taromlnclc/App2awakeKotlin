@@ -15,7 +15,6 @@ import androidx.appcompat.app.AlertDialog
 
 /*
  Quedaron sin uso....
-import android.view.View
 import com.example.app2awake.R
 import android.view.animation.Animation
  */
@@ -46,7 +45,7 @@ class MainActivity : AppCompatActivity() {
                     val bandText = textoBandera.text.toString()
                     val numOtro = findViewById<TextView>(R.id.resultado)
                     val numText = numOtro.text.toString()
-                    if (bandText.isNotEmpty()) {  // Antes condicion > bandText.length == 0
+                    if (bandText.isEmpty()) {  // Antes condicion > bandText.length == 0
                         // El TextView no está vacío
                         // Realiza las acciones necesarias
                         if (numText.isNotEmpty()) { // Antes condicion >  numText.length != 0
@@ -62,7 +61,7 @@ class MainActivity : AppCompatActivity() {
     }
     //Transformo a funciones
     // Indica que no utiliza view: View : fun botonSuma(view: View)
-    fun botonSuma() {
+    fun botonSuma(view: View) {
         //log
         Log.d("DEPURACION", "Presiona boton de Suma.")
         //activa animacion
@@ -74,7 +73,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     // Indica que no utiliza view: View : fun botonResta(view: View)
-    fun botonResta() {
+    fun botonResta(view: View) {
         //log
         Log.d("DEPURACION", "Presiona boton de Resta.")
         //activa animacion
@@ -86,7 +85,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     // Indica que no utiliza view: View : fun botonMulti(view: View)
-    fun botonMulti() {
+    fun botonMulti(view: View) {
         //log
         Log.d("DEPURACION", "Presiona boton de Multiplicacion.")
         //activa animacion
@@ -98,7 +97,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     // Indica que no utiliza view: View : fun botonDivi(view: View)
-    fun botonDivi() {
+    fun botonDivi(view: View) {
         //log
         Log.d("DEPURACION", "Presiona boton de Division.")
         //activa animacion
